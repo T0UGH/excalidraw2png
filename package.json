@@ -9,13 +9,23 @@
   "scripts": {
     "build": "tsc",
     "test": "tsc && node --test dist/**/*.test.js",
-    "start": "node dist/cli.js"
+    "start": "node dist/cli.js",
+    "prepublishOnly": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/T0UGH/excalidraw2png.git"
   },
   "keywords": [
     "excalidraw",
     "png",
     "converter",
     "validator"
+  ],
+  "files": [
+    "dist/",
+    "fonts/*.woff2",
+    "README.md"
   ],
   "license": "MIT",
   "type": "commonjs",
