@@ -1,0 +1,84 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "test",
+  "elements": [
+    {
+      "type": "rectangle", "id": "box-a", "x": 50, "y": 50, "width": 100, "height": 60,
+      "angle": 0, "strokeColor": "#1e1e1e", "backgroundColor": "#a5d8ff",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid",
+      "roughness": 1, "opacity": 100, "seed": 20, "version": 1, "versionNonce": 20,
+      "isDeleted": false, "groupIds": [], "boundElements": [{"id": "a1", "type": "arrow"}],
+      "link": null, "locked": false, "roundness": {"type": 3}
+    },
+    {
+      "type": "rectangle", "id": "box-b", "x": 300, "y": 50, "width": 100, "height": 60,
+      "angle": 0, "strokeColor": "#1e1e1e", "backgroundColor": "#b2f2bb",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid",
+      "roughness": 1, "opacity": 100, "seed": 21, "version": 1, "versionNonce": 21,
+      "isDeleted": false, "groupIds": [], "boundElements": [{"id": "a1", "type": "arrow"}, {"id": "a2", "type": "arrow"}],
+      "link": null, "locked": false, "roundness": {"type": 3}
+    },
+    {
+      "type": "rectangle", "id": "box-c", "x": 300, "y": 200, "width": 100, "height": 60,
+      "angle": 0, "strokeColor": "#1e1e1e", "backgroundColor": "#ffc9c9",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid",
+      "roughness": 1, "opacity": 100, "seed": 22, "version": 1, "versionNonce": 22,
+      "isDeleted": false, "groupIds": [], "boundElements": [{"id": "a2", "type": "arrow"}, {"id": "a3", "type": "arrow"}],
+      "link": null, "locked": false, "roundness": {"type": 3}
+    },
+    {
+      "type": "rectangle", "id": "box-d", "x": 50, "y": 200, "width": 100, "height": 60,
+      "angle": 0, "strokeColor": "#1e1e1e", "backgroundColor": "#ffec99",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid",
+      "roughness": 1, "opacity": 100, "seed": 23, "version": 1, "versionNonce": 23,
+      "isDeleted": false, "groupIds": [], "boundElements": [{"id": "a3", "type": "arrow"}],
+      "link": null, "locked": false, "roundness": {"type": 3}
+    },
+    {
+      "type": "arrow", "id": "a1", "x": 155, "y": 80, "width": 140, "height": 0,
+      "angle": 0, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid",
+      "roughness": 1, "opacity": 100, "seed": 30, "version": 1, "versionNonce": 30,
+      "isDeleted": false, "groupIds": [], "boundElements": null, "link": null, "locked": false,
+      "roundness": null, "points": [[0, 0], [140, 0]],
+      "startArrowhead": null, "endArrowhead": "arrow",
+      "startBinding": {"elementId": "box-a", "focus": 0, "gap": 5},
+      "endBinding": {"elementId": "box-b", "focus": 0, "gap": 5}
+    },
+    {
+      "type": "arrow", "id": "a2", "x": 350, "y": 115, "width": 0, "height": 80,
+      "angle": 0, "strokeColor": "#e03131", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "dashed",
+      "roughness": 1, "opacity": 100, "seed": 31, "version": 1, "versionNonce": 31,
+      "isDeleted": false, "groupIds": [], "boundElements": null, "link": null, "locked": false,
+      "roundness": null, "points": [[0, 0], [0, 80]],
+      "startArrowhead": null, "endArrowhead": "arrow",
+      "startBinding": {"elementId": "box-b", "focus": 0, "gap": 5},
+      "endBinding": {"elementId": "box-c", "focus": 0, "gap": 5}
+    },
+    {
+      "type": "arrow", "id": "a3", "x": 295, "y": 230, "width": 140, "height": 0,
+      "angle": 0, "strokeColor": "#2f9e44", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid",
+      "roughness": 1, "opacity": 100, "seed": 32, "version": 1, "versionNonce": 32,
+      "isDeleted": false, "groupIds": [], "boundElements": null, "link": null, "locked": false,
+      "roundness": null, "points": [[0, 0], [-140, 0]],
+      "startArrowhead": "arrow", "endArrowhead": "arrow",
+      "startBinding": {"elementId": "box-c", "focus": 0, "gap": 5},
+      "endBinding": {"elementId": "box-d", "focus": 0, "gap": 5}
+    },
+    {
+      "type": "line", "id": "l1", "x": 50, "y": 310, "width": 350, "height": 0,
+      "angle": 0, "strokeColor": "#868e96", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "dotted",
+      "roughness": 0, "opacity": 100, "seed": 33, "version": 1, "versionNonce": 33,
+      "isDeleted": false, "groupIds": [], "boundElements": null, "link": null, "locked": false,
+      "roundness": null, "points": [[0, 0], [350, 0]],
+      "startArrowhead": null, "endArrowhead": null,
+      "startBinding": null, "endBinding": null
+    }
+  ],
+  "appState": { "viewBackgroundColor": "#ffffff" },
+  "files": {}
+}

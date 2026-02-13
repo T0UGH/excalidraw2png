@@ -1,0 +1,32 @@
+{
+  "name": "excalidraw2png",
+  "version": "0.1.0",
+  "description": "CLI tool to validate and convert .excalidraw files to PNG",
+  "main": "dist/index.js",
+  "bin": {
+    "excalidraw2png": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc && node --test dist/**/*.test.js",
+    "start": "node dist/cli.js"
+  },
+  "keywords": [
+    "excalidraw",
+    "png",
+    "converter",
+    "validator"
+  ],
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "canvas": "^3.2.1",
+    "commander": "^14.0.3",
+    "roughjs": "^4.6.6",
+    "wawoff2": "^2.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^25.2.3",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "test",
+  "elements": [
+    {
+      "type": "text", "id": "t1", "x": 50, "y": 30, "width": 200, "height": 35,
+      "text": "Virgil Hand-drawn", "fontSize": 28, "fontFamily": 1,
+      "textAlign": "left", "verticalAlign": "top",
+      "angle": 0, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid",
+      "roughness": 1, "opacity": 100, "seed": 10, "version": 1, "versionNonce": 10,
+      "isDeleted": false, "groupIds": [], "boundElements": null, "link": null,
+      "locked": false, "roundness": null, "containerId": null,
+      "originalText": "Virgil Hand-drawn", "autoResize": true, "lineHeight": 1.25
+    },
+    {
+      "type": "text", "id": "t2", "x": 50, "y": 80, "width": 200, "height": 25,
+      "text": "Helvetica Sans-serif", "fontSize": 20, "fontFamily": 2,
+      "textAlign": "left", "verticalAlign": "top",
+      "angle": 0, "strokeColor": "#1971c2", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid",
+      "roughness": 1, "opacity": 100, "seed": 11, "version": 1, "versionNonce": 11,
+      "isDeleted": false, "groupIds": [], "boundElements": null, "link": null,
+      "locked": false, "roundness": null, "containerId": null,
+      "originalText": "Helvetica Sans-serif", "autoResize": true, "lineHeight": 1.25
+    },
+    {
+      "type": "text", "id": "t3", "x": 50, "y": 120, "width": 250, "height": 25,
+      "text": "Cascadia Monospace", "fontSize": 20, "fontFamily": 3,
+      "textAlign": "left", "verticalAlign": "top",
+      "angle": 0, "strokeColor": "#9c36b5", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid",
+      "roughness": 1, "opacity": 100, "seed": 12, "version": 1, "versionNonce": 12,
+      "isDeleted": false, "groupIds": [], "boundElements": null, "link": null,
+      "locked": false, "roundness": null, "containerId": null,
+      "originalText": "Cascadia Monospace", "autoResize": true, "lineHeight": 1.25
+    },
+    {
+      "type": "text", "id": "t4", "x": 50, "y": 180, "width": 300, "height": 60,
+      "text": "Multi-line text\nwith center align\nthree lines!", "fontSize": 16, "fontFamily": 1,
+      "textAlign": "center", "verticalAlign": "top",
+      "angle": 0, "strokeColor": "#e03131", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid",
+      "roughness": 1, "opacity": 100, "seed": 13, "version": 1, "versionNonce": 13,
+      "isDeleted": false, "groupIds": [], "boundElements": null, "link": null,
+      "locked": false, "roundness": null, "containerId": null,
+      "originalText": "Multi-line text\nwith center align\nthree lines!", "autoResize": true, "lineHeight": 1.25
+    },
+    {
+      "type": "text", "id": "t5", "x": 50, "y": 270, "width": 200, "height": 25,
+      "text": "50% opacity text", "fontSize": 20, "fontFamily": 2,
+      "textAlign": "left", "verticalAlign": "top",
+      "angle": 0, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid",
+      "roughness": 1, "opacity": 50, "seed": 14, "version": 1, "versionNonce": 14,
+      "isDeleted": false, "groupIds": [], "boundElements": null, "link": null,
+      "locked": false, "roundness": null, "containerId": null,
+      "originalText": "50% opacity text", "autoResize": true, "lineHeight": 1.25
+    }
+  ],
+  "appState": { "viewBackgroundColor": "#f8f9fa" },
+  "files": {}
+}
