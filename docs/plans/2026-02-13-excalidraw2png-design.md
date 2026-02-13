@@ -6,7 +6,10 @@ CLI 工具，提供两个核心命令：
 1. **validate** — 校验 .excalidraw 文件格式，输出结构化错误信息
 2. **convert** — 将 .excalidraw 文件转换为 PNG，渲染效果与 Excalidraw 官方导出保持一致
 
-典型工作流：agent 生成 .excalidraw 文件 → validate 校验 → convert 转 PNG
+典型工作流：AI agent 生成 .excalidraw 文件 → validate 校验 → convert 转 PNG
+
+**核心设计原则：错误信息的消费者是 AI agent，不是人类。**
+每条错误必须包含足够信息让 agent 直接定位并修复问题：当前值、合法值、JSON 路径。
 
 ## 技术方案
 
@@ -57,25 +60,63 @@ excalidraw2png convert input.excalidraw --scale 2 --dark-mode --no-background
 - containerId 引用的元素 ID 必须存在
 - arrow 的 startBinding/endBinding 引用的 elementId 必须存在
 
-**输出格式（默认人类可读）：**
+**输出格式设计 — 面向 AI agent**
+
+每条错误必须包含 4 个要素，让 agent 能直接修复：
+1. **path** — JSON 路径，agent 知道改哪里
+2. **got** — 当前值，agent 知道错在哪
+3. **expected** — 合法值/范围，agent 知道改成什么
+4. **fix** — 修复建议（一句话）
+
+**默认输出（人类可读，但信息完整）：**
 ```
-ERROR [L1] 缺少 elements 数组
-ERROR [L2] 元素 "abc123" (rectangle): opacity 值 150 超出范围 [0, 100]
-WARN  [L3] 元素 "arrow-1" (arrow): startBinding 引用的元素 "box-99" 不存在
+ERROR [L1] $.elements: missing required field "elements" (expected: array of element objects)
+ERROR [L2] $.elements[0].opacity: got 150, expected number in [0, 100]. Fix: set opacity to a value between 0 and 100
+ERROR [L2] $.elements[3].type: got "hexagon", expected one of: rectangle, ellipse, diamond, line, arrow, freedraw, text, image, frame, magicframe, iframe, embeddable. Fix: use a supported element type
+ERROR [L2] $.elements[5].strokeStyle: got "wavy", expected one of: solid, dashed, dotted. Fix: change strokeStyle to "solid", "dashed", or "dotted"
+ERROR [L2] $.elements[7] (text): missing required field "fontSize" (expected: number > 0). Fix: add "fontSize" field with a positive number, e.g. 16
+ERROR [L2] $.elements[9] (arrow): "points" must be array of [x, y] pairs, got string. Fix: set points to array like [[0,0],[100,50]]
+WARN  [L3] $.elements[2].boundElements[0].id: references element "box-99" which does not exist in elements array. Fix: ensure element with id "box-99" exists, or remove this boundElements entry
 ```
 
-**JSON 格式（--json）：**
+**JSON 格式（--json，推荐 agent 使用）：**
 ```json
 {
   "valid": false,
   "errors": [
-    {"level": "L1", "message": "缺少 elements 数组", "path": "$.elements"},
-    {"level": "L2", "elementId": "abc123", "elementType": "rectangle", "message": "opacity 值 150 超出范围 [0, 100]", "path": "$.elements[0].opacity"}
+    {
+      "level": "L2",
+      "path": "$.elements[0].opacity",
+      "elementId": "abc123",
+      "elementType": "rectangle",
+      "field": "opacity",
+      "got": 150,
+      "expected": "number in [0, 100]",
+      "fix": "set opacity to a value between 0 and 100"
+    },
+    {
+      "level": "L2",
+      "path": "$.elements[3].type",
+      "elementId": "shape-1",
+      "field": "type",
+      "got": "hexagon",
+      "expected": ["rectangle", "ellipse", "diamond", "line", "arrow", "freedraw", "text", "image", "frame", "magicframe", "iframe", "embeddable"],
+      "fix": "use a supported element type"
+    }
   ],
   "warnings": [
-    {"level": "L3", "elementId": "arrow-1", "elementType": "arrow", "message": "startBinding 引用的元素 \"box-99\" 不存在"}
+    {
+      "level": "L3",
+      "path": "$.elements[2].boundElements[0].id",
+      "elementId": "arrow-1",
+      "elementType": "arrow",
+      "field": "boundElements",
+      "got": "box-99",
+      "expected": "existing element id",
+      "fix": "ensure element with id \"box-99\" exists, or remove this boundElements entry"
+    }
   ],
-  "summary": {"total": 20, "valid": 18, "errors": 1, "warnings": 1}
+  "summary": {"totalElements": 20, "validElements": 18, "errorCount": 2, "warningCount": 1}
 }
 ```
 
